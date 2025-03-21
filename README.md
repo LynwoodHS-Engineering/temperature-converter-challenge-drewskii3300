@@ -18,22 +18,40 @@ Your task is to create a temperature conversion program using Python functions. 
 
 **Program Structure:**
 
-```python
 def celsius_to_fahrenheit(celsius):
-    # Your code here
-
+    """Converts Celsius to Fahrenheit.""" 
+    return (celsius * 9/5) + 32 
+    
 def fahrenheit_to_celsius(fahrenheit):
-    # Your code here
-
+       """Converts Fahrenheit to Celsius.""" 
+       return (fahrenheit - 32) * 5/9 
+       
 def menu():
-    # Your code here
-
-def main():
-    # Your code here
-
-# Call the main function to start the program
+    """Displays the menu and returns the user's choice.""" 
+    print("\nTemperature Converter") 
+    print("1. Celsius to Fahrenheit") 
+    print("2. Fahrenheit to Celsius") 
+    print("3. Exit")
+    return input("Choose an option (1-3): ") 
+    
+def main(): 
+    """Main function to run the program.""" 
+    while True: 
+        choice = menu() 
+        if choice == '1': 
+        celsius = float(input("Enter temperature in Celsius: ")) 
+        print(f"{celsius}°C is {celsius_to_fahrenheit(celsius):.2f}°F") 
+        elif choice == '2': 
+             fahrenheit = float(input("Enter temperature in Fahrenheit: ")) 
+             print(f"{fahrenheit}°F is {fahrenheit_to_celsius(fahrenheit):.2f}°C") 
+        elif choice == '3': 
+             print("Goodbye!") 
+             break 
+         else: 
+            print("Invalid choice. Please enter 1, 2, or 3.") 
+# Run the program 
 main()
-```
+
 
 **Bonus Challenge:**
 Add a third conversion option for Kelvin, including functions to convert to and from Kelvin.
